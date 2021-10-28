@@ -53,4 +53,32 @@ class SolutionUtilTest {
         int actualResultExample4 = SolutionUtil.lengthOfLongestSubstring(dataExample4);
         assertEquals(expectedResultExample4, actualResultExample4);
     }
+
+    @Test
+    void testLongestPalindrome() {
+        // Example 1
+        String expectedResultExample1 = "bab";
+        String dataExample1 = "babad";
+        String actualResultExample1 = SolutionUtil.longestPalindrome(dataExample1);
+        assertEquals(expectedResultExample1, actualResultExample1);
+
+        // Example 2
+        String expectedResultExample2 = "bb";
+        String dataExample2 = "cbbd";
+        String actualResultExample2 = SolutionUtil.longestPalindrome(dataExample2);
+        assertEquals(expectedResultExample2, actualResultExample2);
+
+        // Example 3
+        String expectedResultExample3 = "aaaa";
+        String dataExample3 = "aaaa";
+        String actualResultExample3 = SolutionUtil.longestPalindrome(dataExample3);
+        assertEquals(expectedResultExample3, actualResultExample3);
+
+        // Example 4
+        String expectedResultExample4 = "aca";
+        String dataExample4 = "aacabdkacaa";
+        String actualResultExample4 = SolutionUtil.longestPalindrome(dataExample4);
+        assertEquals(expectedResultExample4, actualResultExample4);
+
+    }
 }

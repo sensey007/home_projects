@@ -58,4 +58,56 @@ public class SolutionUtil {
             return result;
         }
     }
+
+
+    /**
+     * Given a string s, return the longest palindromic substring in s.
+     * https://leetcode.com/problems/longest-palindromic-substring/
+     */
+    public static String longestPalindrome(String s) {
+        if (s.length() == 1) {
+            return s;
+        } else {
+            String result = s.substring(0, 1);
+            String fullRevertedString = new StringBuilder(s).reverse().toString();
+            String revertedString = "";
+            for (int i = 0; i < s.length(); i++) {
+                for (int j = s.length(); j > i + 1; j--) {
+                    String subString = s.substring(i, j);
+                    if (subString.length() <= result.length()) {
+                        break;
+                    }
+                    if ((subString.length() % 2) == 0) {
+                        int middleIndex = subString.length() / 2;
+                        if (j == s.length()) {
+                            revertedString = fullRevertedString.substring(0 , middleIndex);
+                        }
+                        if (subString.substring(0 , middleIndex).equals(revertedString)) {
+                                result = subString;
+                            break;
+                        } else {
+                            revertedString = revertedString.substring(1);
+                        }
+                    } else {
+                        int middleIndex = subString.length()/2;
+                        if (j == s.length()) {
+                            revertedString = fullRevertedString.substring(0 , middleIndex);
+                        }
+                        if (subString.substring(0, middleIndex).equals(revertedString)) {
+                               result = subString;
+                            break;
+                        } else {
+                            revertedString = revertedString.substring(1) + subString.charAt(middleIndex);
+                        }
+                    }
+                }
+
+                if (result.length() >= s.substring(i).length()) {
+                    return result;
+                }
+            }
+            return result;
+        }
+    }
+
 }
