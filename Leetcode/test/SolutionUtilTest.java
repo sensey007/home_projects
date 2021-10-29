@@ -81,4 +81,37 @@ class SolutionUtilTest {
         assertEquals(expectedResultExample4, actualResultExample4);
 
     }
+
+    @Test
+    void testMaxArea() {
+        // Example 1
+        int expectedResultExample1 = 49;
+        int [] dataExample1 = {1,8,6,2,5,4,8,3,7};
+        int actualResultExample1 = SolutionUtil.maxArea(dataExample1);
+        assertEquals(expectedResultExample1, actualResultExample1);
+
+        // Example 2
+        int expectedResultExample2 = 1;
+        int [] dataExample2 = {1,1};
+        int actualResultExample2 = SolutionUtil.maxArea(dataExample2);
+        assertEquals(expectedResultExample2, actualResultExample2);
+
+        // Example 3
+        int expectedResultExample3 = 16;
+        int [] dataExample3 = {4,3,2,1,4};
+        int actualResultExample3 = SolutionUtil.maxArea(dataExample3);
+        assertEquals(expectedResultExample3, actualResultExample3);
+
+        // Example 4
+        int expectedResultExample4 = 1;
+        int [] dataExample4 = {1,2};
+        int actualResultExample4 = SolutionUtil.maxArea(dataExample4);
+        assertEquals(expectedResultExample4, actualResultExample4);
+
+        // Example 5
+        int expectedResultExample5 = 24;
+        int [] dataExample5 = {1,2,3,4,5,25,24,3,4};
+        int actualResultExample5 = SolutionUtil.maxArea(dataExample5);
+        assertEquals(expectedResultExample5, actualResultExample5);
+    }
 }
